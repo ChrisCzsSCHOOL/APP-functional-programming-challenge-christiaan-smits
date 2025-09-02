@@ -1,3 +1,4 @@
+package src.les2;
 public class Les2Opdr1 {
     public static void main(String[] args) {
 
