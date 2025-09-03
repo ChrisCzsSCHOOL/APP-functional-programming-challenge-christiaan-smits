@@ -41,6 +41,8 @@ public class Les2Opdr5 {
 
     }
 
+
+    // gebruik recursie
     public static boolean binaireZoek(int[] lijst, int waarde) {
         // Midden van de array pakken
         int midden = lijst[lijst.length / 2];
