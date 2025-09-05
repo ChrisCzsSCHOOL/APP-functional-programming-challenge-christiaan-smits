@@ -1,4 +1,4 @@
-public class Les3Opdr1 {
+public class Opdr1 {
 
     public static void main(String[] args) {
         long n = 10;

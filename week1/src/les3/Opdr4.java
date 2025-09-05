@@ -1,4 +1,4 @@
-public class Les3Opdr4 {
+public class Opdr4 {
     public static void main(String[] args) {
         String n = "ekitike";
 //        String n = "racecar";
