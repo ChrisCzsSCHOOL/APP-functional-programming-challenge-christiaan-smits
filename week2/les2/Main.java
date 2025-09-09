@@ -1,0 +1,29 @@
+public class Main {
+    public static void main(String[] args) {
+//        MemoryCell<Integer> integerCell = new MemoryCell();
+//        integerCell.setValue(13);
+//
+//        Integer i = integerCell.getValue();
+//        System.out.println(i);
+//
+//        // --------------------------------
+//
+//        MemoryCell<String> stringCell = new MemoryCell<>();
+//        stringCell.setValue("Chris");
+//
+//        String s = stringCell.getValue();
+//        System.out.println(s);
+
+        // Laat je dit een int, dan past dit niet in de T[]. Bij een normale int doet java dit wel zelf (autoboxing)
+        Integer[] array = {1, 2, 3, 4, 5, 6};
+        int value = 3;
+        System.out.printf("Aantal groter dan %d: %d\n", value, Sandbox.countGreatherThan(array, value));
+
+        String[] array2 = {"Nourtje", "Bartu", "Quinn", "Rick", "Lok"};
+        String stringValue = "Chris";
+        System.out.printf("Aantal groter dan %s: %d\n", stringValue, Sandbox.countGreatherThan(array2, stringValue));
+
+    }
+
+
+}
