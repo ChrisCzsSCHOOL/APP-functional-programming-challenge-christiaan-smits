@@ -23,6 +23,16 @@ public class Main {
         String stringValue = "Chris";
         System.out.printf("Aantal groter dan %s: %d\n", stringValue, Sandbox.countGreatherThan(array2, stringValue));
 
+        Persoon[] array3 = {
+                new Persoon("Nourtje"),
+                new Persoon("Bartu"),
+                new Persoon("Quinn"),
+                new Persoon("Rick"),
+                new Persoon("Lok")
+        };
+        Persoon persoonValue = new Persoon("Chris");
+        System.out.printf("Aantal groter dan %s: %d\n", persoonValue, Sandbox.countGreatherThan(array3, persoonValue));
+
     }
 
 
