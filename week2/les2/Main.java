@@ -4,7 +4,11 @@ public class Main {
 
         // compareingz();
 
+        // pairingz();
 
+    }
+
+    private static void pairingz(){
         Pair pair = new Pair(new Persoon("Chris"), "Poep en plas");
         System.out.println(pair.getI());
         System.out.println(pair.getS());
