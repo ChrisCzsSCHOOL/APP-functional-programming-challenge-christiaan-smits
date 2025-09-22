@@ -14,7 +14,6 @@ public class Vertex {
 
     }
 
-
     public String getName() {
         return name;
     }
