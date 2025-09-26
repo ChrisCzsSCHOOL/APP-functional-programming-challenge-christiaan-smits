@@ -1,3 +1,5 @@
+# Gebruik gemaakt van Gemini begeleid leren: https://g.co/gemini/share/56bfd865bce6
+
 graph = %{
   :a => [{:b, 4}, {:c, 2}],
   :b => [{:c, 5}],
