@@ -1,11 +1,13 @@
-print_recursief = fn
-  ([], _func) ->
+defmodule ListPrinter do 
+
+  def print_list([]) do
     :ok
-  ([hoofd | staart], func) ->
-    IO.puts(hoofd)
-    func.(staart, func)
+  end
+
+  def print_list([head | tail]) do
+    IO.inspect(head)
+    print_list(tail)
+  end
+
+
 end
-
-getallen = 0..5
-
-print_recursief.(getallen, print_recursief)
