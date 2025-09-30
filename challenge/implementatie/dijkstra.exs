@@ -6,21 +6,13 @@ defmodule Dijkstra do
     :c => [{:a, 1}]
   }
   
-  # graph = 
-
-  # distance = 
-  
   def distance(), do: %{
     :a => 0,
     :b => :infinity,
     :c => :infinity
   }
-
-  # unvisited =
     
   def unvisited(), do: [:a, :b, :c]
-
-  # previous = 
   
   def previous(), do: %{
     :a => nil,
