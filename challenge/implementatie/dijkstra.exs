@@ -79,4 +79,4 @@ defmodule Dijkstra do
   end
 end
 
-IO.puts(Dijkstra.solve(Dijkstra.graph, Dijkstra.distance, Dijkstra.unvisited, Dijkstra.previous))
+IO.inspect(Dijkstra.solve(Dijkstra.graph, Dijkstra.distance, Dijkstra.unvisited, Dijkstra.previous))
