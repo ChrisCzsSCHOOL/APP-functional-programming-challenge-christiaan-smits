@@ -1,5 +1,4 @@
 # Gebruik gemaakt van Gemini begeleid leren: https://g.co/gemini/share/56bfd865bce6
-
 graph = %{
   :a => [{:b, 4}, {:c, 2}],
   :b => [{:c, 5}],
@@ -12,7 +11,7 @@ distance = %{
   :c => :infinity
 }
 
-univisted = [:a, :b, :c]
+unvisited = [:a, :b, :c]
 
 previous = %{
   :a => nil,
@@ -21,11 +20,11 @@ previous = %{
 }
 
 # Base case: unvisited knopen zijn leeg.
-def solve(_graph, distance, [], previous), do: {distances, previous}
+def solve(_graph, distance, [], previous), do: {distance, previous}
 
 # Recursive case: voer de volgende unvisited uit. Roept zichzelf daarna weer aan.
-def solve(graph, dsitance, unvisited, previous) do
-  # Pakte de huidige knoop door in univisted te kijken en de laagste distance op te zoeken
+def solve(graph, distance, unvisited, previous) do
+  # Pakte de huidige knoop door in unvisited te kijken en de laagste distance op te zoeken
   current_node =
     unvisited
     |> Enum.min_by(fn node -> Map.get(distance, node, :infinity) end)
@@ -38,25 +37,34 @@ def solve(graph, dsitance, unvisited, previous) do
 
   current_distance = Map.get(distance, current_node)
 
+  # 1. 'Bereken' de nieuwe distance
   {new_distance, new_previous} =
     Enum.reduce(
-      # 1. De lijst die we verwerken
+      # 1.1. De lijst die we verwerken
       neighbors,
-      # 2. De beginwaarde van de accumulator
+      # 1.2. De beginwaarde van de accumulator
       {distance, previous},
-      # 3. De functie om bij te werken (fn neighbor, acc -> ... end)
+      # 1.3. De functie om bij te werken (fn neighbor, acc -> ... end)
       fn {neighbor_node, weight}, {dist_acc, prev_acc} ->
         new_distance = current_distance + weight
 
         current_neighbor_distance = Map.get(dist_acc, neighbor_node, :infinity)
 
+        # 2. Nieuwe afstand is korter: Werk de maps bij en retourneer de nieuwe accumulator
         if new_distance < current_neighbor_distance do
-          # 2. Nieuwe afstand is korter: Werk de maps bij en retourneer de nieuwe accumulator
-          ...
+          # 2.1. Update de afstand (dist_acc)
+          new_dist_acc = Map.put(dist_acc, neighbor_node, new_distance)
+          # 2.2. Update het pad (prev_acc)
+          new_prev_acc = Map.put(prev_acc, neighbor_node, current_node)
+          # 2.3. Retourneer de nieuwe accumulator
+          {new_dist_acc, new_prev_acc}
         else
           # 3. Nieuwe afstand is niet korter: Retourneer de ongewijzigde accumulator
-          ...
+          {dist_acc, prev_acc}
         end
       end
     )
+
+  # 5. Recursieve aanroep: Ga verder met de bijgewerkte staat
+  solve(graph, new_distance, new_unvisited, new_previous)
 end
