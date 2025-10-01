@@ -1,24 +1,35 @@
 # Gebruik gemaakt van Gemini begeleid leren: https://g.co/gemini/share/56bfd865bce6
 defmodule Dijkstra do
-  def graph(), do: %{
-    :a => [{:b, 4}, {:c, 2}],
-    :b => [{:c, 5}],
-    :c => [{:a, 1}]
-  }
-  
-  def distance(), do: %{
-    :a => 0,
-    :b => :infinity,
-    :c => :infinity
-  }
-    
-  def unvisited(), do: [:a, :b, :c]
-  
-  def previous(), do: %{
-    :a => nil,
-    :b => nil,
-    :c => nil
-  }
+  def graph(),
+    do: %{
+      :a => [{:b, 1}, {:d, 2}],
+      :b => [{:c, 2}],
+      :c => [{:e, 1}],
+      :d => [{:f, 4}],
+      :e => [{:f, 2}]
+    }
+
+  def distance(),
+    do: %{
+      :a => 0,
+      :b => :infinity,
+      :c => :infinity,
+      :d => :infinity,
+      :e => :infinity,
+      :f => :infinity,
+    }
+
+  def unvisited(), do: [:a, :b, :c, :d, :e, :f]
+
+  def previous(),
+    do: %{
+      :a => nil,
+      :b => nil,
+      :c => nil,
+      :d => nil,
+      :e => nil,
+      :f => nil
+    }
 
   # Base case: unvisited knopen zijn leeg.
   def solve(_graph, distance, [], previous), do: {distance, previous}
@@ -71,4 +82,6 @@ defmodule Dijkstra do
   end
 end
 
-IO.inspect(Dijkstra.solve(Dijkstra.graph, Dijkstra.distance, Dijkstra.unvisited, Dijkstra.previous))
+IO.inspect(
+  Dijkstra.solve(Dijkstra.graph(), Dijkstra.distance(), Dijkstra.unvisited(), Dijkstra.previous())
+)
