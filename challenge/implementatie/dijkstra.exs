@@ -43,12 +43,12 @@ defmodule Dijkstra do
   # Base case: unvisited knopen zijn leeg. Pattern matching
   def solve(_graph, distance, [], previous), do: {distance, previous}
 
-  # Recursive case: voer de volgende unvisited uit. Roept zichzelf daarna weer aan.
+  # Recursive case: voer de volgende unvisited uit. Roept zichzelf daarna weer recursief aan.
   def solve(graph, distance, unvisited, previous) do
 
-    # De opzet
+    # --- De opzet ---
 
-    # Pakte de huidige knoop door in unvisited te kijken en de laagste distance op te zoeken
+    # Pakte de huidige knoop door in unvisited te kijken en de laagste distance op te zoeken.
     current_node =
       unvisited
       |> Enum.min_by(fn node -> Map.get(distance, node, :infinity) end)
@@ -61,12 +61,12 @@ defmodule Dijkstra do
 
     current_distance = Map.get(distance, current_node)
     
-    # Het algoritme
+    # --- Het algoritme ---
 
     # 1. 'Bereken' de nieuwe distance
     {new_distance, new_previous} =
       Enum.reduce(
-        # 1.1. De lijst die we verwerken
+        # 1.1. De lijst die we verwerken van buren
         neighbors,
         # 1.2. De beginwaarde van de accumulator
         {distance, previous},
@@ -96,6 +96,7 @@ defmodule Dijkstra do
   end
 end
 
+# Print de uitkomst van het korste pad per node en de vorige node.
 IO.inspect(
   Dijkstra.solve(Dijkstra.graph(), Dijkstra.distance(Dijkstra.graph()), Dijkstra.unvisited(Dijkstra.graph()), Dijkstra.previous(Dijkstra.graph()))
 )

@@ -11,8 +11,18 @@
 | Docent | Dennis Breuker |
 
 
-## Onderzoek 
+## Inhoudsopgave
 
+TODO: inhoudsopgave en nummering
+
+
+## Inleiding
+
+Voor APP kregen wij de opdracht om een challenge te bedenken/kiezen en deze te implementeren in een functionele taal. Ik heb ervoor gekozen om Dijkstra te implementeren met Elixir. 
+Ik heb voor Elixir gekozen nadat ik eerst voor Haskell had gekozen. Achteraf was dit een goede keuze, omdat Haskell toch hele rare syntax heeft voor iemand die functioneel programmeren voor het eerst doet. Na Elixir te hebben gezien bij mede-studenten en de documentatie te bekijken leek mij dit een makkelijkere en betere instap in functioneel programmeren. 
+
+
+## Onderzoek 
 
 ### Zuiverheid (pure functions)
 
@@ -25,11 +35,13 @@ https://how.dev/answers/what-is-a-pure-function-in-elixir
 ### First-class functions
 
 
+
 ```
 <codevoorbeeld>
 ```
 
 ### High-order functions
+
 
 
 ```
@@ -75,5 +87,17 @@ Daarnaast is de uitdaging ook complex genoeg doordat:
 - er met (voor ons) nieuwe datastructure wordt gewerkt in een onbekende taal, denk aan een graaf.
 
 Zelf ben ik altijd al geïnteresseerd geweest in kortste pad algoritmes, vooral omdat je die vaak terugziet in game development. Toch vond ik Dijkstra dan interessanter dan bijvoorbeeld A*, omdat dit algoritme is ontwikkeld door een Nederlander.
+
+## Implementatie
+
+
+
+## Reflectie
+
+
+
+## Conclusie
+
+
 
 ## Bronnen
