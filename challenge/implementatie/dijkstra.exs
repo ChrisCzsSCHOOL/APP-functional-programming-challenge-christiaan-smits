@@ -45,6 +45,9 @@ defmodule Dijkstra do
 
   # Recursive case: voer de volgende unvisited uit. Roept zichzelf daarna weer aan.
   def solve(graph, distance, unvisited, previous) do
+
+    # De opzet
+
     # Pakte de huidige knoop door in unvisited te kijken en de laagste distance op te zoeken
     current_node =
       unvisited
@@ -57,6 +60,8 @@ defmodule Dijkstra do
     neighbors = Map.get(graph, current_node, [])
 
     current_distance = Map.get(distance, current_node)
+    
+    # Het algoritme
 
     # 1. 'Bereken' de nieuwe distance
     {new_distance, new_previous} =
