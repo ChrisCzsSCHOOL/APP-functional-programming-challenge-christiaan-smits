@@ -1,4 +1,3 @@
-# Gebruik gemaakt van Gemini begeleid leren: https://g.co/gemini/share/56bfd865bce6
 defmodule Dijkstra do
   def graph(),
     do: %{
@@ -9,29 +8,39 @@ defmodule Dijkstra do
       :e => [{:f, 2}]
     }
 
-  def distance(),
-    do: %{
-      :a => 0,
-      :b => :infinity,
-      :c => :infinity,
-      :d => :infinity,
-      :e => :infinity,
-      :f => :infinity,
-    }
+  # https://g.co/gemini/share/8b3381cd448f
+  def unvisited(graph), do: Map.keys(graph)
 
-  def unvisited(), do: [:a, :b, :c, :d, :e, :f]
+  # https://g.co/gemini/share/c576aaa23c61
+  def previous(graph) do
+    graph
+    |> Map.keys()
+    |> Enum.map(fn key -> {key, nil} end)
+    # https://hexdocs.pm/elixir/Map.html#new/1
+    |> Map.new()
+  end
 
-  def previous(),
-    do: %{
-      :a => nil,
-      :b => nil,
-      :c => nil,
-      :d => nil,
-      :e => nil,
-      :f => nil
-    }
+  def distance(graph) do
+    start =
+      if Map.has_key?(graph, :a) do
+        :a
+      else
+        graph |> Map.keys() |> Enum.at(0)
+      end
 
-  # Base case: unvisited knopen zijn leeg.
+    graph
+    |> Map.keys()
+    |> Enum.map(fn key ->
+      if key == start do
+        {key, 0}
+      else
+        {key, :infinity}
+      end
+    end)
+    |> Map.new()
+  end
+
+  # Base case: unvisited knopen zijn leeg. Pattern matching
   def solve(_graph, distance, [], previous), do: {distance, previous}
 
   # Recursive case: voer de volgende unvisited uit. Roept zichzelf daarna weer aan.
@@ -83,5 +92,5 @@ defmodule Dijkstra do
 end
 
 IO.inspect(
-  Dijkstra.solve(Dijkstra.graph(), Dijkstra.distance(), Dijkstra.unvisited(), Dijkstra.previous())
+  Dijkstra.solve(Dijkstra.graph(), Dijkstra.distance(Dijkstra.graph()), Dijkstra.unvisited(Dijkstra.graph()), Dijkstra.previous(Dijkstra.graph()))
 )
