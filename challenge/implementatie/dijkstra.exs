@@ -54,6 +54,8 @@ defmodule Dijkstra do
       |> Enum.min_by(fn node -> Map.get(distance, node, :infinity) end)
 
     # https://hexdocs.pm/elixir/1.12.3/List.html#delete/2
+    # Belangrijk om te herkennen is hier dat dit niet de lijst unvisited veranderd dat het eerste element verwijderd wordt, 
+    # maar dat er een nieuwe lijst wordt gemaakt zonder het eerste element. Is dus wel een functionele functie
     new_unvisited = List.delete(unvisited, current_node)
 
     # Een lijst van alle nodes die een connectie hebben met de current_node
