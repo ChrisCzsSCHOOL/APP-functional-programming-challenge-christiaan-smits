@@ -47,13 +47,16 @@ Binnen Elixir wordt er gewerkt met pure functies. De taal dwingt je niet af om 1
 
 ### First-class functions
 
+First class functions binnen elixir laten je toe om functies toe te wijzen aan een variabele. De functie is dan te gebruiken of door te geven aan een andere functie via de gemaakte variabele. (Functions As First-Class Citizens in Elixir | Culttt, 2016) Binnen Elixir zijn alle functies first class citizens. (Functions · Elixir School, z.d.) Dit betekent dat je dit kan doen:
 
-
-
+```elixir
+def math do
+    square = fn x -> x * x end
+    IO.inspect(square.(5))
+end
 
 ```
-<codevoorbeeld>
-```
+Zoals te zien is hierboven kan je de variabele square aanroepen (en ook meegeven) als een functie.
 
 ### High-order functions
 
@@ -143,6 +146,8 @@ Zelf ben ik altijd al geïnteresseerd geweest in kortste pad algoritmes, vooral 
 4. Wikipedia contributors. (2025, 10 september). Lazy evaluation. Wikipedia. https://en.wikipedia.org/wiki/Lazy_evaluation#:~:text=In%20programming%20language%20theory%2C%20lazy,by%20the%20use%20of%20sharing).
 5. Stream — Elixir v1.12.3. (z.d.). https://hexdocs.pm/elixir/1.12.3/Stream.html
 6. Enum — Elixir v1.12.3. (z.d.). https://hexdocs.pm/elixir/1.12.3/Enum.html#each/2
+7. Functions as First-Class Citizens in Elixir | Culttt. (2016, 9 mei). https://culttt.com/2016/05/09/functions-first-class-citizens-elixir#:~:text=In%20Elixir%2C%20functions%20are%20first,the%20argument%20to%20another%20function.
+8. Functions · Elixir school. (z.d.). https://elixirschool.com/en/lessons/basics/functions
 
 ### AI vragen
 
