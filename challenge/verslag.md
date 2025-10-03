@@ -70,6 +70,7 @@ Binnen Elixir wordt er gewerkt met pure functies. De taal dwingt je niet af om 1
 
 ### Recursie
 
+Recursie is een concept die wij ook in de lessen hebben geleerd. Het houdt in dat je een functie binnen zichzelf aanroept met een stopconditie, zodat je applicatie niet oneindig door blijft gaan. Hier een voorbeeld in java:
 
 ```java
 private static long berekenFibonacci(long n) {
@@ -77,6 +78,8 @@ private static long berekenFibonacci(long n) {
     return berekenFibonacci(n-1) + berekenFibonacci(n-2);
 }
 ```
+
+Binnen functionele talen zoals Elixir is recursie eigenlijk hetzelfde. De grootste 'verandering' is dat je recursie meer nodig hebt. For en while loops zijn geen functies die in functionele programmeertalen thuishoren. Ze zijn wel aanwezig in Elixir, maar in een andere vorm. Denk hierbij aan de Enum.each/2 methode. (Enum — Elixir v1.12.3, z.d.) Om deze functies zelf uit te schrijven gebruik je dus recursie om door bijvoorbeeld een lijst heen te gaan.
 
 ### Lazy evaluation
 
@@ -137,6 +140,7 @@ Zelf ben ik altijd al geïnteresseerd geweest in kortste pad algoritmes, vooral 
 3. Jerat, B. (2019, 13 mei). A Case for Pattern Matching. Medium. Geraadpleegd op 2 oktober 2025, van https://medium.com/digitalfrontiers/a-case-for-pattern-matching-b43a5c9796b8
 4. Wikipedia contributors. (2025, 10 september). Lazy evaluation. Wikipedia. https://en.wikipedia.org/wiki/Lazy_evaluation#:~:text=In%20programming%20language%20theory%2C%20lazy,by%20the%20use%20of%20sharing).
 5. Stream — Elixir v1.12.3. (z.d.). https://hexdocs.pm/elixir/1.12.3/Stream.html
+6. Enum — Elixir v1.12.3. (z.d.). https://hexdocs.pm/elixir/1.12.3/Enum.html#each/2
 
 ### AI vragen
 
