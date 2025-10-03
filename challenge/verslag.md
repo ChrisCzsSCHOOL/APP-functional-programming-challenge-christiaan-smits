@@ -60,18 +60,45 @@ Zoals te zien is hierboven kan je de variabele square aanroepen (en ook meegeven
 
 ### High-order functions
 
+Een high-order function is een functie die andere functies als argumenten accepteert of zelf een functie teruggeeft. (Wikipedia contributors, 2025b) Dit maakt het mogelijk om algemene functies te schrijven die flexibeler zijn en veel code kunnen hergebruiken. Binnen Elixir worden high-order functions vaak toegepast in de Enum en Stream modules.
 
+Een bekend voorbeeld is de Enum.map/2 functie, die een lijst neemt en een functie uitvoert op elk element in de lijst. Hierdoor wordt er een nieuwe lijst teruggegeven met de resultaten van die functie.
 
+```elixir
+getallen = [1, 2, 3]
+verdubbeld = Enum.map(getallen, fn x -> x * 2 end)
+
+IO.inspect(verdubbeld)
 ```
-<codevoorbeeld>
-```
+
+Hier wordt de anonieme functie fn x -> x * 2 end doorgegeven aan Enum.map/2. Dat maakt Enum.map/2 een high-order function: de functie neemt een andere functie als argument en past die toe op elk element in de lijst.
+
+Het verschil tussen First-class functions en High-order functions is zoals je kan zien ook vrij klein. Vooral omdat de 2 concepten erg dicht bij elkaar liggen.
 
 ### Immutability
 
+Immutability in Elixir is niet anders dan in andere talen. Variabele en dergelijke hun waarde kan niet veranderen nadat ze zijn aangemaakt. In Elixir kunnen ze wel worden ge-rebind, zie hieronder:
 
+```elixir
+x = 2
+def doeIets() do
+    x = 3 # Binnen deze scope x = 3
+end
+IO.inspect(x) # Print hier 2
 ```
-<codevoorbeeld>
+
+Waar dit een probleem wordt is wanneer je lijsten wil gaan veranderen. Zo moet je dus telkens een nieuwe lijst maken (of een functie gebruiken die je een nieuwe lijst voor je maakt). Om dit op te lossen gebruik je nieuwe variabelen, zie hier een voorbeeld van een Medium artikel:
+
+```elixir
+original_list = [1, 2, 3]
+new_list = [0 | original_list]
+
+# original_list remains [1, 2, 3]
+# new_list becomes [0, 1, 2, 3]
 ```
+(Rizan, 2025)
+
+Zoals hier goed te zien is moet je een nieuwe variabele aanmaken om die lijst aan te passen.
 
 ### Recursie
 
@@ -148,6 +175,8 @@ Zelf ben ik altijd al geïnteresseerd geweest in kortste pad algoritmes, vooral 
 6. Enum — Elixir v1.12.3. (z.d.). https://hexdocs.pm/elixir/1.12.3/Enum.html#each/2
 7. Functions as First-Class Citizens in Elixir | Culttt. (2016, 9 mei). https://culttt.com/2016/05/09/functions-first-class-citizens-elixir#:~:text=In%20Elixir%2C%20functions%20are%20first,the%20argument%20to%20another%20function.
 8. Functions · Elixir school. (z.d.). https://elixirschool.com/en/lessons/basics/functions
+9. Rizan. (2025, 22 februari). Immutability and Variable Binding in Elixir. Medium. Geraadpleegd op 3 oktober 2025, van https://medium.com/@qrizan/immutability-and-variable-binding-in-elixir-512fa14d30e9
+10. Wikipedia contributors. (2025b, september 29). Higher-order function. Wikipedia. https://en.wikipedia.org/wiki/Higher-order_function
 
 ### AI vragen
 
