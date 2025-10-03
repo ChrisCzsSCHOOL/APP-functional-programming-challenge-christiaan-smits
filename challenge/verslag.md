@@ -42,12 +42,12 @@ IO.puts Math.fibonacci(9)
 ``` 
 (What Is A Pure Function in Elixir?, z.d.)
 
-Binnen Elixir wordt er gewerkt met pure functies. De taal dwingt je niet af om 100% pure functies altijd te schrijven, om flexibiliteit te behouden. Elixir is alleen wel gemaakt om pure functies in te maken.
+Binnen Elixir wordt er gewerkt met pure functies. De taal dwingt je niet af om 100% pure functies altijd te schrijven, om flexibiliteit te behouden. Elixir is alleen wel gemaakt om pure functies in te maken. Je zou ook kunnen zeggen dat Elixir functioneel georiënteerd is, omdat bijvoorbeeld functies als IO.puts wel side effects hebben.
 
 
 ### First-class functions
 
-First class functions binnen elixir laten je toe om functies toe te wijzen aan een variabele. De functie is dan te gebruiken of door te geven aan een andere functie via de gemaakte variabele. (Functions As First-Class Citizens in Elixir | Culttt, 2016) Binnen Elixir zijn alle functies first class citizens. (Functions · Elixir School, z.d.) Dit betekent dat je dit kan doen:
+First class functions binnen elixir laten je toe om functies toe te wijzen aan een variabele. De functie is dan te gebruiken of door te geven aan een andere functie via de gemaakte variabele. (Functions As First-Class Citizens in Elixir | Culttt, 2016) Binnen Elixir en andere functionele programmeertalen zijn alle functies first class citizens. (Functions · Elixir School, z.d.) Dit betekent dat je dit kan doen:
 
 ```elixir
 def math do
@@ -73,7 +73,7 @@ IO.inspect(verdubbeld)
 
 Hier wordt de anonieme functie fn x -> x * 2 end doorgegeven aan Enum.map/2. Dat maakt Enum.map/2 een high-order function: de functie neemt een andere functie als argument en past die toe op elk element in de lijst.
 
-Het verschil tussen First-class functions en High-order functions is zoals je kan zien ook vrij klein. Vooral omdat de 2 concepten erg dicht bij elkaar liggen.
+Het verschil tussen First-class functions en High-order functions is zoals je kan zien ook vrij klein. Vooral omdat de 2 concepten erg dicht bij elkaar liggen. Ze hebben een oorzaak-gevolg relatie. Het een hangt samen met het ander.
 
 ### Immutability
 
@@ -87,7 +87,7 @@ end
 IO.inspect(x) # Print hier 2
 ```
 
-Waar dit een probleem wordt is wanneer je lijsten wil gaan veranderen. Zo moet je dus telkens een nieuwe lijst maken (of een functie gebruiken die je een nieuwe lijst voor je maakt). Om dit op te lossen gebruik je nieuwe variabelen, zie hier een voorbeeld van een Medium artikel:
+Omdat waarden immutable zijn, moet je bij het ‘aanpassen’ van een datastructuur altijd een nieuwe versie maken. Zo moet je dus telkens een nieuwe lijst maken (of een functie gebruiken die je een nieuwe lijst voor je maakt). Om dit op te lossen gebruik je nieuwe variabelen, zie hier een voorbeeld van een Medium artikel:
 
 ```elixir
 original_list = [1, 2, 3]
@@ -117,11 +117,11 @@ Binnen functionele talen zoals Elixir is recursie eigenlijk hetzelfde. De groots
 
 Lazy evaluation is een strategie waarbij je pas iets uitrekent wanneer je de waarde nodig hebt. (Wikipedia contributors, 2025) Binnen Elixir heb je verschillende manieren om dit toe te passen. Degene die ik het meest voorbij heb zien komen is het gebruiken van Streams. Zoals in de documentatie van Elixir te lezen is: "Due to their laziness, streams are useful when working with large (or even infinite) collections." (Stream — Elixir v1.12.3, z.d.) 
 
-Binnen de opdracht voor het Dijkstra algoritme is dit een beetje een raar concept. Vooral om het algoritme van zichzelf niet lazy is, maar eager. Het zou wel een eventuele optimalisatie kunnen zijn voor grotere datasets, maar klopt niet helemaal met hoe het algoritme is. Dat is dan ook de reden dat dit concept niet in mijn daadwerkelijke opdracht voorkomt.
+Bij Dijkstra is lazy evaluation minder toepasbaar, omdat het algoritme van nature eager werkt. Wel zouden Streams nuttig kunnen zijn bij het verwerken van zeer grote of oneindige datasets, maar klopt niet helemaal met hoe het algoritme werkt, omdat het dus eager is. Dat is dan ook de reden dat dit concept niet in mijn daadwerkelijke opdracht voorkomt.
 
 ### Pattern matching
 
-Patternmatching is een effectieve manier om een base case te implementeren bij het gebruik van recursie of lange if/else takken te voorkomen (Jerat, 2019). Het gebruik hiervan is dus goed om lange stukken code die je handmatig zou moeten typen een stuk compacter te maken. Ook is het handig omdat er in functionele talen variabelen immutable zijn. Als je iets met een lijst wilt doen zoals de eerste verwijderen, kijk je al heel gauw naar pattern matching.
+Pattern matching is een effectieve manier om een base case te implementeren bij het gebruik van recursie of lange if/else takken te voorkomen (Jerat, 2019). Het gebruik hiervan is dus goed om lange stukken code die je handmatig zou moeten typen een stuk compacter te maken. Ook is het handig omdat er in functionele talen variabelen immutable zijn. Als je iets met een lijst wilt doen zoals de eerste verwijderen, kijk je al heel gauw naar pattern matching.
 
 Hier een heel versimpeld codevoorbeeld:
 ```elixir
@@ -140,6 +140,7 @@ Hier een heel versimpeld codevoorbeeld:
 ```
 
 Zoals hierboven te zien is in Elixir wordt er *iets* gedaan met het eerste element, maar willen we bijvoorbeeld met de rest van de lijst ook steeds hetzelfde doen totdat de lijst leeg is. Wanneer de lijst leeg is **herkent hij dus het patroon** dat er een lege lijst is. Zo geeft de applicatie ook geen foutmeldingen en is de recursie netjes afgehandeld. 
+Pattern matching kan ook heel handig zijn voor het afhandelen van zogenaamde tuples. Zo kan je op dezelfde manier verschillende functies maken met andere soorten tuples en daar dus anders mee omgaan.
 
 ## Challenge
 
