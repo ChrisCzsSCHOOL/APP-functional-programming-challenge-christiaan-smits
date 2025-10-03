@@ -80,11 +80,9 @@ private static long berekenFibonacci(long n) {
 
 ### Lazy evaluation
 
-leg uit dat dijkstra van zichzelf eager is
+Lazy evaluation is een strategie waarbij je pas iets uitrekent wanneer je de waarde nodig hebt. (Wikipedia contributors, 2025) Binnen Elixir heb je verschillende manieren om dit toe te passen. Degene die ik het meest voorbij heb zien komen is het gebruiken van Streams. Zoals in de documentatie van Elixir te lezen is: "Due to their laziness, streams are useful when working with large (or even infinite) collections." (Stream — Elixir v1.12.3, z.d.) 
 
-```
-<codevoorbeeld>
-```
+Binnen de opdracht voor het Dijkstra algoritme is dit een beetje een raar concept. Vooral om het algoritme van zichzelf niet lazy is, maar eager. Het zou wel een eventuele optimalisatie kunnen zijn voor grotere datasets, maar klopt niet helemaal met hoe het algoritme is. Dat is dan ook de reden dat dit concept niet in mijn daadwerkelijke opdracht voorkomt.
 
 ### Pattern matching
 
@@ -137,6 +135,8 @@ Zelf ben ik altijd al geïnteresseerd geweest in kortste pad algoritmes, vooral 
 1. Sathsara, C. (2023, 16 september). Pure Functions: The Core of Functional Programming 🌟. Medium. Geraadpleegd op 3 oktober 2025, van https://charithsathsara.medium.com/pure-functions-the-core-of-functional-programming-153687b790f7
 2. What is a pure function in Elixir? (z.d.). HowDev. https://how.dev/answers/what-is-a-pure-function-in-elixir
 3. Jerat, B. (2019, 13 mei). A Case for Pattern Matching. Medium. Geraadpleegd op 2 oktober 2025, van https://medium.com/digitalfrontiers/a-case-for-pattern-matching-b43a5c9796b8
+4. Wikipedia contributors. (2025, 10 september). Lazy evaluation. Wikipedia. https://en.wikipedia.org/wiki/Lazy_evaluation#:~:text=In%20programming%20language%20theory%2C%20lazy,by%20the%20use%20of%20sharing).
+5. Stream — Elixir v1.12.3. (z.d.). https://hexdocs.pm/elixir/1.12.3/Stream.html
 
 ### AI vragen
 
