@@ -2,6 +2,8 @@
 
 ![Dijkstra Paradigma Cartoon](foto/dijkstra_paradigma_cartoon.png)
 
+"Had ik nou maar google maps om dit voor me te doen" - A. Mateur 2025.
+
 | Naam | Christiaan Smits |
 | --- | --- |
 | Studentennummer | 1645750 |
