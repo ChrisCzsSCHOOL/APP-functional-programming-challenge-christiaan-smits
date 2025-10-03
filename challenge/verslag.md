@@ -32,6 +32,7 @@
     - [5.1 Gebruikte concepten](#51-gebruikte-concepten)
     - [5.2 Reflectie gebruikte concepten](#52-reflectie-gebruikte-concepten)
     - [5.3 Gebruik generatieve-AI](#53-gebruik-generatieve-ai)
+    - [5.4 Gekozen taal](#54-gekozen-taal)
   - [6 Conclusie](#6-conclusie)
   - [7 Bronnen](#7-bronnen)
     - [7.1 AI vragen](#71-ai-vragen)
@@ -235,9 +236,15 @@ Dit concept vind ik nog steeds verwarrend om zo te moeten uitleggen, omdat het e
 
 Tijdens het maken van het onderzoek heb ik vrijwel alles uit bronnen gehaald en af en toe een verduidelijkende vraag gesteld aan ChatGPT. Ook heb ik aan het einde van het verslag even gevraagd om een spellingscheck. Tijdens het maken van de implementatie heb ik voor het algoritme Begeleid Leren gebruikt van Gemini flash 2.5. Hierbij krijg je geen directe antwoorden, maar moet je best veel zelf invullen. Dit vond ik vooral handig, omdat de syntax mij compleet onbekend was. Links hiervan staan in de code vermeld. Om de challenge meer aan te gaan heb ik het gebruik van Github co-pilot compleet uitgezet. Dit zodat ik toch zelf meer kon doen, in plaats van dat ik de hele code al had gezien met 1 klik op de tab knop.
 
+### 5.4 Gekozen taal
+
+Uiteindelijk denk ik dat Elixir een prima taal was voor deze opdracht. Het gebruik van def en defmodules waren prettig. Vanuit andere uitwerkingen van andere opdrachten bij medestudenten die ik heb gezien heeft niet iedereen zoals ik variabelen meegeeft binnen de defmodule. Van wat ik zie op internet weet ik nog steeds niet of dit een best practice zou zijn. 
+Elixir was voor de rest, zoals eerder ook al gezegd, een functioneel georiënteerde taal. Het verschilt dus met een taal als bijvoorbeeld Haskell die puur functioneel is. Dit omdat er nog een paar concepten zijn in Elixir waarbij je nog imperatief zou kunnen programmeren. 
+Ook de syntax was niet te gek. Als ik het vergelijk met bijvoorbeeld haskell was dit relatief eenvoudige syntax. Natuurlijk zaten er voor mij gekke dingen in zoals '|>'. Daarnaast viel het me ook op dat de documentatie van Elixir best goed is. Alles is goed beschreven en de voorbeelden zijn ook duidelijk genoeg.
+
 ## 6 Conclusie
 
-Aan het einde van de opdracht ben ik bij kennis gemaakt te hebben met functioneel programmeren, maar ben ik blij dat ik object georiënteerd coderen al 2 jaar doe. De belangrijkste dingen die ik meeneem is vooral de andere denkwijze, immutability, recursie en pattern matching. Hiermee kan ik, als er later niet al een off-the-shelf oplossing is, nadenken over hoe ik een complexer probleem kan oplossen.
+Aan het einde van de opdracht ben ik bij kennis gemaakt te hebben met functioneel programmeren, maar ben ik blij dat ik object georiënteerd coderen al 2 jaar doe. De belangrijkste dingen die ik meeneem is vooral de andere denkwijze, immutability, recursie en pattern matching. Hiermee kan ik, als er later niet al een off-the-shelf oplossing is, nadenken over hoe ik een complexer probleem kan oplossen. Elixir was uiteindelijk ook een goede taal om dit mee te doen, aangezien de syntax voor mij logisch was en de documentatie goed en duidelijk is.
 
 ## 7 Bronnen
 
