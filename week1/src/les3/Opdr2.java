@@ -11,7 +11,6 @@ public class Opdr2 {
     private static long berekenFibonacci(long n) {
         if (n <= 1) return n;
         return berekenFibonacci(n-1) + berekenFibonacci(n-2);
-
     }
 
     // Big O van deze methode is O(n)

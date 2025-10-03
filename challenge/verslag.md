@@ -14,6 +14,7 @@
 ## Inhoudsopgave
 
 TODO: inhoudsopgave en nummering
+TODO: Tabel en codevoorbeelden nummeren
 
 
 ## Inleiding
@@ -26,15 +27,25 @@ Ik heb voor Elixir gekozen nadat ik eerst voor Haskell had gekozen. Achteraf was
 
 ### Zuiverheid (pure functions)
 
-https://how.dev/answers/what-is-a-pure-function-in-elixir
+Een pure functie is een functie, dat gegeven dezelfde input, hij altijd dezelfde output teruggeeft zonder side effects. Dat maakt ze dan ook voorspelbaar en consistent.(Sathsara, 2023)
 
+```elixir
+defmodule Math do 
+  def fibonacci(0) do 0 end
+  def fibonacci(1) do 1 end
+  def fibonacci(n) do fibonacci(n-1) + fibonacci(n-2) end
+end
 
+IO.puts Math.fibonacci(9)
+``` 
+(What Is A Pure Function in Elixir?, z.d.)
 
-```
-<codevoorbeeld>
-```
+Binnen Elixir wordt er gewerkt met pure functies. De taal dwingt je niet af om 100% pure functies altijd te schrijven, om flexibiliteit te behouden. Elixir is alleen wel gemaakt om pure functies in te maken.
+
 
 ### First-class functions
+
+
 
 
 
@@ -60,8 +71,11 @@ https://how.dev/answers/what-is-a-pure-function-in-elixir
 ### Recursie
 
 
-```
-<codevoorbeeld>
+```java
+private static long berekenFibonacci(long n) {
+    if (n <= 1) return n;
+    return berekenFibonacci(n-1) + berekenFibonacci(n-2);
+}
 ```
 
 ### Lazy evaluation
@@ -120,5 +134,10 @@ Zelf ben ik altijd al geïnteresseerd geweest in kortste pad algoritmes, vooral 
 ## Bronnen
 
 
+1. Sathsara, C. (2023, 16 september). Pure Functions: The Core of Functional Programming 🌟. Medium. Geraadpleegd op 3 oktober 2025, van https://charithsathsara.medium.com/pure-functions-the-core-of-functional-programming-153687b790f7
+2. What is a pure function in Elixir? (z.d.). HowDev. https://how.dev/answers/what-is-a-pure-function-in-elixir
+3. Jerat, B. (2019, 13 mei). A Case for Pattern Matching. Medium. Geraadpleegd op 2 oktober 2025, van https://medium.com/digitalfrontiers/a-case-for-pattern-matching-b43a5c9796b8
 
-Jerat, B. (2019, 13 mei). A Case for Pattern Matching. Medium. Geraadpleegd op 2 oktober 2025, van https://medium.com/digitalfrontiers/a-case-for-pattern-matching-b43a5c9796b8
+### AI vragen
+
+1. https://chatgpt.com/share/68df9a79-69c8-800f-b1e7-3b0c1d8915c5, hier snapte ik het concept pure functies goed, maar wou ik opheldering of het nog mogelijk was om toch een onpure functie te schrijven in Elixir. Ik dacht zelf eigenlijk al van wel, maar vroeg het voor de zekerheid aan ChatGPT.
